@@ -1,4 +1,4 @@
-// variable declaration and assignment
+// variable declaration and assignment dvhfhvhf
 // const is nothing but a constant variable which cannot be re assigned and re declared.
 
 const x = "naga";
