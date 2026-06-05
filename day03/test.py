@@ -16,8 +16,8 @@ print("\n")
 
 
 class Cars:
-    name = 10
-    color = 20
+    name = "bmw"
+    color = "red"
     def speed(self):
         name2=self.name
         print(name2)
@@ -70,7 +70,7 @@ c5.withdraw(500)
 c5.show_balance()
 print("\n")
 
-
+# inheritance
 class grand_parent :
     def work(self):
         print("this is grandparent class")
@@ -89,18 +89,20 @@ obj1.test()
 obj2=child()
 obj2.test()
 obj2.display()
+obj2.work()
 
 # super() in inheritance
 
 class employee:
     def work(self):
+        self.e= 10
+        self.d= 29
         print("employee working")
 class developer(employee):
-    def execute(self):
-        super().work()
-
     def work(self):
+        super().work()
         print("developer write a code")
+        print(self.e + self.d)
 
 class display(developer):
     def test(self):
@@ -110,7 +112,7 @@ class display(developer):
 
 obj1 = developer()
 obj1.work()
-obj1.execute()
+
 
 obj1 = display()
 obj1.work()
