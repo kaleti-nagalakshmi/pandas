@@ -19,13 +19,15 @@ print(slicing)
 
 
 
+
+
 n = pd.read_excel("C:\\Users\\Shyam\\Downloads\\20_students_data.xlsx")
 print(n)
-
+print(n.describe())
 
 print(df.head())
 print(df.tail(2))
-print(n.describe())
+
 print(n.shape)
 print(n[0:20:2])
 print(n["Name"][10:20:2])
@@ -128,8 +130,16 @@ print(n_1)
 n_1.loc[(n_1["percentage_marks"] >= 50.0) & (n_1["percentage_marks"] < 80.0),["Grade"]]="Pass"
 print(n_1)
 
-n_1.to_excel("C:\\Users\\Shyam\\Downloads\\student_marks_10_members.xlsx")
-print(n_1)
+monthly = (
+    n_1.groupby("Roll Number",as_index = False)["Total"]
+    .sum()
+    .sort_values("Roll Number")
+)
+print(monthly)
+
+
+
+
 
 
 
