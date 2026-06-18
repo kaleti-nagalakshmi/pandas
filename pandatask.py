@@ -99,6 +99,32 @@ print(df)
 
 
 
+import pandas as pd
+data = {
+    "year":("jan","feb","mar","apl","may","jun","jul","aug","sep","oct","nov","dec"),
+    "sales_1":(12,45,34,34,62,35,14,26,29,30,37,48),
+    "sales_2":(24,5,78,96,35,49,50,28,49,25,14,68),
+    "sales_channel":["online","store","online","store","online","store","online","store",
+                     "online","store","online","store"]
+}
+s = pd.DataFrame(data)
+import numpy as np
+import matplotlib.pyplot as plt
+x = np.arange(len(s["year"]))
+w = 0.4
+
+plt.bar(x-w/2,s["sales_1"],width=w,label = "sales 1")
+plt.bar(x+w/2,s["sales_2"],width=w,label ="sales 2")
+plt.xlabel("order year")
+plt.ylabel("sales")
+plt.title("comparing sales of two products ")
+
+plt.xticks(x,s["year"])
+plt.show()
+
+
+
+
 
 
 
